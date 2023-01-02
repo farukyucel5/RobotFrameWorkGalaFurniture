@@ -1,525 +1,332 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230102 23:21:34.465" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230103 01:52:58.815" rpa="false" schemaversion="3">
 <suite id="s1" name="RobotFrameworkGalaFurniture" source="C:\Asoftware\RobotFrameworkGalaFurniture">
 <suite id="s1-s1" name="Rf Proje-Main" source="C:\Asoftware\RobotFrameworkGalaFurniture\rf_proje-main">
 <suite id="s1-s1-s1" name="Tests" source="C:\Asoftware\RobotFrameworkGalaFurniture\rf_proje-main\Tests">
 <suite id="s1-s1-s1-s1" name="GalaFurniture" source="C:\Asoftware\RobotFrameworkGalaFurniture\rf_proje-main\Tests\GalaFurniture.robot">
-<test id="s1-s1-s1-s1-t1" name="Positive searching product" line="40">
+<test id="s1-s1-s1-s1-t1" name="make list of desks whose price is less than 400$" line="57">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230102 23:21:35.600" level="INFO">Opening browser 'chrome' to base url 'https://www.galafurn.com'.</msg>
-<status status="PASS" starttime="20230102 23:21:35.598" endtime="20230102 23:21:42.820"/>
+<msg timestamp="20230103 01:52:59.965" level="INFO">Opening browser 'chrome' to base url 'https://www.galafurn.com'.</msg>
+<status status="PASS" starttime="20230103 01:52:59.963" endtime="20230103 01:53:07.329"/>
 </kw>
-<kw name=" Click search button" library="HomePage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${searchBtn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:42.827" level="INFO">Clicking button '//button[@aria-controls='SearchBar-header-top']'.</msg>
-<status status="PASS" starttime="20230102 23:21:42.825" endtime="20230102 23:21:43.197"/>
+<kw name="Click Desk inside the home office" library="HomePage">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${HomeLocator}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230103 01:53:07.335" level="INFO">Simulating Mouse Over on element '(//div[@class='header-menu__summary-container'])[6]'.</msg>
+<status status="PASS" starttime="20230103 01:53:07.333" endtime="20230103 01:53:07.664"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:42.823" endtime="20230102 23:21:43.198"/>
+<status status="PASS" starttime="20230103 01:53:07.331" endtime="20230103 01:53:07.665"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230102 23:21:46.199" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230102 23:21:43.199" endtime="20230102 23:21:46.200"/>
+<kw name="desk sayfasinda olduğunu onayla" library="CategoryPage">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${DeskLocator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230103 01:53:07.668" level="INFO">Clicking link '(//a[@href='/collections/desk'])[2]'.</msg>
+<status status="PASS" starttime="20230103 01:53:07.667" endtime="20230103 01:53:08.568"/>
 </kw>
-<kw name="Search for room" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchBoxInput}</arg>
-<arg>room</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:46.204" level="INFO">Typing text 'room' into text field '(//input[@id='SearchBarInput-header-top'])[1]'.</msg>
-<status status="PASS" starttime="20230102 23:21:46.203" endtime="20230102 23:21:46.328"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${searchBoxInput}</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230102 23:21:46.332" level="INFO">Sending key(s) ('ENTER',) to (//input[@id='SearchBarInput-header-top'])[1] element.</msg>
-<msg timestamp="20230102 23:21:46.626" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20230102 23:21:46.626" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20230102 23:21:46.329" endtime="20230102 23:21:48.301"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:46.202" endtime="20230102 23:21:48.302"/>
-</kw>
-<kw name="Sonuclarin basariyla gorundugunu kontrol et" library="SearchPage">
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultText}</var>
-<arg>${searchResult}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:48.356" level="INFO">${resultText} = 14809 results found for “room”</msg>
-<status status="PASS" starttime="20230102 23:21:48.304" endtime="20230102 23:21:48.357"/>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${actualURL}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20230103 01:53:08.573" level="INFO">${actualURL} = https://www.galafurn.com/collections/desk</msg>
+<status status="PASS" starttime="20230103 01:53:08.568" endtime="20230103 01:53:08.574"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
-<arg>${resultText}</arg>
-<arg>room</arg>
+<arg>${actualURL}</arg>
+<arg>desk</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230102 23:21:48.357" endtime="20230102 23:21:48.359"/>
+<status status="PASS" starttime="20230103 01:53:08.574" endtime="20230103 01:53:08.576"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:48.303" endtime="20230102 23:21:48.359"/>
+<status status="PASS" starttime="20230103 01:53:07.666" endtime="20230103 01:53:08.577"/>
 </kw>
-<kw name="Urun fiyatlarini kucukten buyuge diz" library="SearchPage">
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>${fiyatDropbox}</arg>
-<arg>price-ascending</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20230102 23:21:48.376" level="INFO">Selecting options from selection list '//select[@id='SortBy-template--15826732220569__main']' by value price-ascending.</msg>
-<status status="PASS" starttime="20230102 23:21:48.374" endtime="20230102 23:21:48.586"/>
+<kw name="Fiyat araligi belirle" library="CategoryPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${priceSekmesi}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230103 01:53:08.581" level="INFO">Clicking element '(//span[@class='filter-group-summary__label'])[3]'.</msg>
+<status status="PASS" starttime="20230103 01:53:08.579" endtime="20230103 01:53:08.656"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230102 23:21:51.588" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230102 23:21:48.587" endtime="20230102 23:21:51.590"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${maxFiyatInput}</arg>
+<arg>400</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230103 01:53:08.659" level="INFO">Typing text '400' into text field '//input[@name='filter.v.price.lte']'.</msg>
+<status status="PASS" starttime="20230103 01:53:08.657" endtime="20230103 01:53:08.929"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:48.373" endtime="20230102 23:21:51.591"/>
+<status status="PASS" starttime="20230103 01:53:08.578" endtime="20230103 01:53:08.929"/>
 </kw>
-<kw name="Urunlerin fiyatlarini konsola yazdir" library="SearchPage">
+<kw name="Urunlerin fiyatlarini konsola yaz" library="CategoryPage">
 <kw name="Get WebElements" library="SeleniumLibrary">
-<var>${urunListesi}</var>
+<var>@{urunListesi}</var>
 <arg>${urunFiyatlariLocator}</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.619" level="INFO">${urunListesi} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="ce592860-bb51-44f9-affb-d54d2d3946b8")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
-<status status="PASS" starttime="20230102 23:21:51.596" endtime="20230102 23:21:51.619"/>
+<msg timestamp="20230103 01:53:08.950" level="INFO">@{urunListesi} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="eeaea012-e00b-4669-8e1a-d6cb5bb6f592")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20230103 01:53:08.931" endtime="20230103 01:53:08.951"/>
 </kw>
 <for flavor="IN">
 <var>${urun}</var>
 <value>@{urunListesi}</value>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="ce592860-bb51-44f9-affb-d54d2d3946b8")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="eeaea012-e00b-4669-8e1a-d6cb5bb6f592")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.642" level="INFO">${urunText} = $31.50</msg>
-<status status="PASS" starttime="20230102 23:21:51.621" endtime="20230102 23:21:51.642"/>
+<msg timestamp="20230103 01:53:08.976" level="INFO">${urunText} = $375.75</msg>
+<status status="PASS" starttime="20230103 01:53:08.952" endtime="20230103 01:53:08.977"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.643" endtime="20230102 23:21:51.644"/>
+<status status="PASS" starttime="20230103 01:53:08.978" endtime="20230103 01:53:08.985"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.620" endtime="20230102 23:21:51.645"/>
+<status status="PASS" starttime="20230103 01:53:08.952" endtime="20230103 01:53:08.986"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="6ab64182-3128-4de5-b83f-47eaac486f28")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="f1bc7404-b96f-484b-a787-4e96a17ff267")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.667" level="INFO">${urunText} = $33.75</msg>
-<status status="PASS" starttime="20230102 23:21:51.647" endtime="20230102 23:21:51.668"/>
+<msg timestamp="20230103 01:53:09.019" level="INFO">${urunText} = $375.75</msg>
+<status status="PASS" starttime="20230103 01:53:08.987" endtime="20230103 01:53:09.019"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.668" endtime="20230102 23:21:51.670"/>
+<status status="PASS" starttime="20230103 01:53:09.020" endtime="20230103 01:53:09.024"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.646" endtime="20230102 23:21:51.670"/>
+<status status="PASS" starttime="20230103 01:53:08.986" endtime="20230103 01:53:09.024"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="67cf77dc-828a-4729-93b1-2fbbf143d75c")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="811c1ce4-222a-4126-8a87-374a42050b93")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.693" level="INFO">${urunText} = $38.25</msg>
-<status status="PASS" starttime="20230102 23:21:51.671" endtime="20230102 23:21:51.694"/>
+<msg timestamp="20230103 01:53:09.048" level="INFO">${urunText} = $398.25</msg>
+<status status="PASS" starttime="20230103 01:53:09.026" endtime="20230103 01:53:09.048"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.694" endtime="20230102 23:21:51.696"/>
+<status status="PASS" starttime="20230103 01:53:09.049" endtime="20230103 01:53:09.051"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.670" endtime="20230102 23:21:51.696"/>
+<status status="PASS" starttime="20230103 01:53:09.025" endtime="20230103 01:53:09.051"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="be704db6-1fa7-4351-a327-22ee35afe856")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="20072566-d26a-47bc-81af-49722652c7d5")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.717" level="INFO">${urunText} = $38.25</msg>
-<status status="PASS" starttime="20230102 23:21:51.698" endtime="20230102 23:21:51.718"/>
+<msg timestamp="20230103 01:53:09.072" level="INFO">${urunText} = $398.25</msg>
+<status status="PASS" starttime="20230103 01:53:09.052" endtime="20230103 01:53:09.073"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.718" endtime="20230102 23:21:51.721"/>
+<status status="PASS" starttime="20230103 01:53:09.073" endtime="20230103 01:53:09.075"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.697" endtime="20230102 23:21:51.722"/>
+<status status="PASS" starttime="20230103 01:53:09.051" endtime="20230103 01:53:09.076"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="de1545e5-c370-4815-99e2-eb8fe037bed9")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="2f2d454b-a1b0-48ea-963e-aa1919769d33")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.753" level="INFO">${urunText} = $38.25</msg>
-<status status="PASS" starttime="20230102 23:21:51.723" endtime="20230102 23:21:51.753"/>
+<msg timestamp="20230103 01:53:09.095" level="INFO">${urunText} = $398.25</msg>
+<status status="PASS" starttime="20230103 01:53:09.077" endtime="20230103 01:53:09.096"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.753" endtime="20230102 23:21:51.757"/>
+<status status="PASS" starttime="20230103 01:53:09.096" endtime="20230103 01:53:09.098"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.722" endtime="20230102 23:21:51.758"/>
+<status status="PASS" starttime="20230103 01:53:09.076" endtime="20230103 01:53:09.099"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="45927f99-5a62-4b01-9aaa-9ed94a7659c5")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="07bd6801-f67f-4278-ad07-422f3cc038ea")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.784" level="INFO">${urunText} = $38.25</msg>
-<status status="PASS" starttime="20230102 23:21:51.759" endtime="20230102 23:21:51.785"/>
+<msg timestamp="20230103 01:53:09.120" level="INFO">${urunText} = $528.75</msg>
+<status status="PASS" starttime="20230103 01:53:09.100" endtime="20230103 01:53:09.121"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.785" endtime="20230102 23:21:51.792"/>
+<status status="PASS" starttime="20230103 01:53:09.122" endtime="20230103 01:53:09.124"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.758" endtime="20230102 23:21:51.792"/>
+<status status="PASS" starttime="20230103 01:53:09.099" endtime="20230103 01:53:09.125"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="252af448-1f9c-416d-9ff8-5fbd32e49302")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="41287dc7-6158-453d-80a1-8fc8363a4807")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.815" level="INFO">${urunText} = $38.25</msg>
-<status status="PASS" starttime="20230102 23:21:51.794" endtime="20230102 23:21:51.816"/>
+<msg timestamp="20230103 01:53:09.147" level="INFO">${urunText} = $596.25</msg>
+<status status="PASS" starttime="20230103 01:53:09.126" endtime="20230103 01:53:09.148"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.816" endtime="20230102 23:21:51.818"/>
+<status status="PASS" starttime="20230103 01:53:09.148" endtime="20230103 01:53:09.150"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.793" endtime="20230102 23:21:51.818"/>
+<status status="PASS" starttime="20230103 01:53:09.125" endtime="20230103 01:53:09.150"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="74a53418-64e0-4f5a-94a2-a7cca2557243")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="dbbe814c-81f6-4b92-bdb1-9fdc9ced30cd")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.843" level="INFO">${urunText} = $38.25</msg>
-<status status="PASS" starttime="20230102 23:21:51.819" endtime="20230102 23:21:51.843"/>
+<msg timestamp="20230103 01:53:09.170" level="INFO">${urunText} = $528.75</msg>
+<status status="PASS" starttime="20230103 01:53:09.151" endtime="20230103 01:53:09.171"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.844" endtime="20230102 23:21:51.847"/>
+<status status="PASS" starttime="20230103 01:53:09.171" endtime="20230103 01:53:09.172"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.818" endtime="20230102 23:21:51.847"/>
+<status status="PASS" starttime="20230103 01:53:09.150" endtime="20230103 01:53:09.173"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="586f6490-c37b-4776-a816-3f1714b889aa")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="070ea1ee-126e-41fd-ae66-3998b9b885e8")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.872" level="INFO">${urunText} = $38.81</msg>
-<status status="PASS" starttime="20230102 23:21:51.848" endtime="20230102 23:21:51.873"/>
+<msg timestamp="20230103 01:53:09.193" level="INFO">${urunText} = $528.75</msg>
+<status status="PASS" starttime="20230103 01:53:09.174" endtime="20230103 01:53:09.194"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.873" endtime="20230102 23:21:51.875"/>
+<status status="PASS" starttime="20230103 01:53:09.195" endtime="20230103 01:53:09.197"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.848" endtime="20230102 23:21:51.876"/>
+<status status="PASS" starttime="20230103 01:53:09.173" endtime="20230103 01:53:09.197"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="10724086-b3b6-49f7-a4a4-812a677bbb03")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="ac9edf36-d5e0-4fb0-ad84-2a4decee3693")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.899" level="INFO">${urunText} = $40.50</msg>
-<status status="PASS" starttime="20230102 23:21:51.877" endtime="20230102 23:21:51.899"/>
+<msg timestamp="20230103 01:53:09.218" level="INFO">${urunText} = $618.75</msg>
+<status status="PASS" starttime="20230103 01:53:09.198" endtime="20230103 01:53:09.218"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.900" endtime="20230102 23:21:51.901"/>
+<status status="PASS" starttime="20230103 01:53:09.219" endtime="20230103 01:53:09.220"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.876" endtime="20230102 23:21:51.902"/>
+<status status="PASS" starttime="20230103 01:53:09.197" endtime="20230103 01:53:09.220"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="576d9efd-0c9a-4f8a-81b8-3600dd5cf15b")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="dada6635-c8cf-4186-a399-f118c81ad457")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.925" level="INFO">${urunText} = $40.50</msg>
-<status status="PASS" starttime="20230102 23:21:51.903" endtime="20230102 23:21:51.925"/>
+<msg timestamp="20230103 01:53:09.241" level="INFO">${urunText} = $1,347.75</msg>
+<status status="PASS" starttime="20230103 01:53:09.221" endtime="20230103 01:53:09.242"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.926" endtime="20230102 23:21:51.928"/>
+<status status="PASS" starttime="20230103 01:53:09.242" endtime="20230103 01:53:09.244"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.902" endtime="20230102 23:21:51.929"/>
+<status status="PASS" starttime="20230103 01:53:09.221" endtime="20230103 01:53:09.245"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="b0258e94-c374-4d3a-83b1-6c6475016a4c")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="03c9c5b2-fbc8-4d83-b918-9c72ebe89562")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.953" level="INFO">${urunText} = $40.50</msg>
-<status status="PASS" starttime="20230102 23:21:51.930" endtime="20230102 23:21:51.954"/>
+<msg timestamp="20230103 01:53:09.265" level="INFO">${urunText} = $677.25</msg>
+<status status="PASS" starttime="20230103 01:53:09.246" endtime="20230103 01:53:09.266"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.954" endtime="20230102 23:21:51.955"/>
+<status status="PASS" starttime="20230103 01:53:09.267" endtime="20230103 01:53:09.268"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.929" endtime="20230102 23:21:51.956"/>
+<status status="PASS" starttime="20230103 01:53:09.245" endtime="20230103 01:53:09.268"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="ded0b52c-0e31-4142-b2f3-784fe4d11cc4")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="25f40b8f-df83-4cff-bf01-08752e94e528")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:51.978" level="INFO">${urunText} = $40.50</msg>
-<status status="PASS" starttime="20230102 23:21:51.957" endtime="20230102 23:21:51.979"/>
+<msg timestamp="20230103 01:53:09.289" level="INFO">${urunText} = $677.25</msg>
+<status status="PASS" starttime="20230103 01:53:09.270" endtime="20230103 01:53:09.289"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:51.979" endtime="20230102 23:21:51.981"/>
+<status status="PASS" starttime="20230103 01:53:09.290" endtime="20230103 01:53:09.291"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.956" endtime="20230102 23:21:51.981"/>
+<status status="PASS" starttime="20230103 01:53:09.269" endtime="20230103 01:53:09.291"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="1a3bdef0-39e3-4777-852e-d275cc73d115")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="38d41ce1-44bd-4c66-8965-003fdc81b98b")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.008" level="INFO">${urunText} = $40.50</msg>
-<status status="PASS" starttime="20230102 23:21:51.982" endtime="20230102 23:21:52.010"/>
+<msg timestamp="20230103 01:53:09.312" level="INFO">${urunText} = $677.25</msg>
+<status status="PASS" starttime="20230103 01:53:09.292" endtime="20230103 01:53:09.313"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.010" endtime="20230102 23:21:52.012"/>
+<status status="PASS" starttime="20230103 01:53:09.313" endtime="20230103 01:53:09.315"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:51.981" endtime="20230102 23:21:52.013"/>
+<status status="PASS" starttime="20230103 01:53:09.292" endtime="20230103 01:53:09.315"/>
 </iter>
 <iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="332a3152-d569-40d4-87a2-5f2178b9c8c9")&gt;</var>
+<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="644f526363a4e34c3822e995aedfb2f5", element="87eb53ed-baec-4d9e-9488-450778e3cb8e")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${urunText}</var>
 <arg>${urun}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.036" level="INFO">${urunText} = $40.50</msg>
-<status status="PASS" starttime="20230102 23:21:52.014" endtime="20230102 23:21:52.036"/>
+<msg timestamp="20230103 01:53:09.336" level="INFO">${urunText} = </msg>
+<status status="PASS" starttime="20230103 01:53:09.317" endtime="20230103 01:53:09.337"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${urunText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.037" endtime="20230102 23:21:52.038"/>
+<status status="PASS" starttime="20230103 01:53:09.337" endtime="20230103 01:53:09.339"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:52.013" endtime="20230102 23:21:52.038"/>
+<status status="PASS" starttime="20230103 01:53:09.316" endtime="20230103 01:53:09.340"/>
 </iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="d3e8db9f-6500-41b7-8d9e-1d549da92c81")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.062" level="INFO">${urunText} = $40.50</msg>
-<status status="PASS" starttime="20230102 23:21:52.039" endtime="20230102 23:21:52.063"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.063" endtime="20230102 23:21:52.067"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.039" endtime="20230102 23:21:52.067"/>
-</iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="47688be4-b523-4207-a6d6-6b3cbf52d0f6")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.093" level="INFO">${urunText} = $40.55</msg>
-<status status="PASS" starttime="20230102 23:21:52.069" endtime="20230102 23:21:52.094"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.094" endtime="20230102 23:21:52.096"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.068" endtime="20230102 23:21:52.096"/>
-</iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="75883bec-68c0-4930-959a-cb03dd9ba4b1")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.116" level="INFO">${urunText} = $42.75</msg>
-<status status="PASS" starttime="20230102 23:21:52.097" endtime="20230102 23:21:52.117"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.117" endtime="20230102 23:21:52.119"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.097" endtime="20230102 23:21:52.120"/>
-</iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="78f8c989-7c6f-4c3e-b836-0a29f17b258a")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.148" level="INFO">${urunText} = $42.75</msg>
-<status status="PASS" starttime="20230102 23:21:52.121" endtime="20230102 23:21:52.149"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.149" endtime="20230102 23:21:52.151"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.120" endtime="20230102 23:21:52.152"/>
-</iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="73817345-159b-44c0-a99a-d39fc744e8cf")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.178" level="INFO">${urunText} = $42.75</msg>
-<status status="PASS" starttime="20230102 23:21:52.153" endtime="20230102 23:21:52.179"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.179" endtime="20230102 23:21:52.181"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.152" endtime="20230102 23:21:52.181"/>
-</iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="7b780810-086d-4117-b849-c3435b67f4d2")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.202" level="INFO">${urunText} = $42.75</msg>
-<status status="PASS" starttime="20230102 23:21:52.182" endtime="20230102 23:21:52.203"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.203" endtime="20230102 23:21:52.204"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.181" endtime="20230102 23:21:52.204"/>
-</iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="7c4ebb9d-c06a-4820-a12c-539c9e4a5fec")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.230" level="INFO">${urunText} = $42.75</msg>
-<status status="PASS" starttime="20230102 23:21:52.206" endtime="20230102 23:21:52.230"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.231" endtime="20230102 23:21:52.233"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.205" endtime="20230102 23:21:52.233"/>
-</iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="0ad27a9d-b859-414f-bd1d-c10c28cc6bc8")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.258" level="INFO">${urunText} = $42.75</msg>
-<status status="PASS" starttime="20230102 23:21:52.234" endtime="20230102 23:21:52.258"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.259" endtime="20230102 23:21:52.261"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.234" endtime="20230102 23:21:52.261"/>
-</iter>
-<iter>
-<var name="${urun}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="1c15d3a3-8719-45e5-be14-91410cca9fbb")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunText}</var>
-<arg>${urun}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.282" level="INFO">${urunText} = $42.75</msg>
-<status status="PASS" starttime="20230102 23:21:52.262" endtime="20230102 23:21:52.283"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${urunText}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230102 23:21:52.283" endtime="20230102 23:21:52.284"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:52.261" endtime="20230102 23:21:52.285"/>
-</iter>
-<status status="PASS" starttime="20230102 23:21:51.619" endtime="20230102 23:21:52.285"/>
+<status status="PASS" starttime="20230103 01:53:08.951" endtime="20230103 01:53:09.340"/>
 </for>
-<kw name="Get WebElements" library="SeleniumLibrary">
-<var>${liste}</var>
-<arg>${listeLocator}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.310" level="INFO">${liste} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="9b2c9710-d125-400c-b1a6-74bf477c8cc1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
-<status status="PASS" starttime="20230102 23:21:52.286" endtime="20230102 23:21:52.310"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${liste}[0]</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:52.312" level="INFO">Clicking link '&lt;selenium.webdriver.remote.webelement.WebElement (session="1a82933556b5b21ad0f7829a65ebf80e", element="9b2c9710-d125-400c-b1a6-74bf477c8cc1")&gt;'.</msg>
-<status status="PASS" starttime="20230102 23:21:52.311" endtime="20230102 23:21:56.851"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:51.594" endtime="20230102 23:21:56.852"/>
-</kw>
-<kw name="Urunun basliginin Domina Jar oldugunu teyit et" library="ProductPage">
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${urunBasligiText}</var>
-<arg>${urunBasligi}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230102 23:21:56.905" level="INFO">${urunBasligiText} = Domina Jar</msg>
-<status status="PASS" starttime="20230102 23:21:56.854" endtime="20230102 23:21:56.907"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${urunBasligiText}</arg>
-<arg>Domina Jar</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230102 23:21:56.907" endtime="20230102 23:21:56.909"/>
-</kw>
-<status status="PASS" starttime="20230102 23:21:56.853" endtime="20230102 23:21:56.910"/>
+<status status="PASS" starttime="20230103 01:53:08.930" endtime="20230103 01:53:09.340"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230102 23:21:56.911" endtime="20230102 23:21:59.274"/>
+<status status="PASS" starttime="20230103 01:53:09.342" endtime="20230103 01:53:11.568"/>
 </kw>
-<status status="PASS" starttime="20230102 23:21:35.594" endtime="20230102 23:21:59.277"/>
+<status status="PASS" starttime="20230103 01:52:59.959" endtime="20230103 01:53:11.570"/>
 </test>
 <doc>GALA FURNITURE projesi</doc>
-<status status="PASS" starttime="20230102 23:21:34.526" endtime="20230102 23:21:59.286"/>
+<status status="PASS" starttime="20230103 01:52:58.883" endtime="20230103 01:53:11.578"/>
 </suite>
-<status status="PASS" starttime="20230102 23:21:34.519" endtime="20230102 23:21:59.298"/>
+<status status="PASS" starttime="20230103 01:52:58.877" endtime="20230103 01:53:11.589"/>
 </suite>
-<status status="PASS" starttime="20230102 23:21:34.511" endtime="20230102 23:21:59.310"/>
+<status status="PASS" starttime="20230103 01:52:58.872" endtime="20230103 01:53:11.599"/>
 </suite>
-<status status="PASS" starttime="20230102 23:21:34.471" endtime="20230102 23:21:59.315"/>
+<status status="PASS" starttime="20230103 01:52:58.824" endtime="20230103 01:53:11.608"/>
 </suite>
 <statistics>
 <total>

@@ -17,6 +17,9 @@ Login linkine tikla
     Click Button    ${searchBtn}   
 
 
-Search for room
-    Input Text    ${searchBoxInput}    room
+Search for product
+    [Arguments]    ${product}
+    Input Text    ${searchBoxInput}    ${product}
     Press Keys    ${searchBoxInput}    ENTER        
+Click Desk inside the home office
+    Mouse Over    ${HomeLocator}   
