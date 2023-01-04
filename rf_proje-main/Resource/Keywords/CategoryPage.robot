@@ -1,32 +1,23 @@
 *** Settings ***
 Library    SeleniumLibrary
+
 Variables    ../Locators/Locators.py
 
 *** Keywords ***
-
-desk sayfasinda olduğunu onayla
-    Click Link    ${DeskLocator}
+Desk sayfasinda oldugunu onayla
     ${actualURL}    Get Location
     Should Contain    ${actualURL}    desk
-
 
 Fiyat araligi belirle
     Click Element    ${priceSekmesi}
     Input Text    ${maxFiyatInput}    400
+    Sleep    3
 
+Urunlerin isimlerini konsola yazdir
+    ${urunBaslikList}    Get WebElements    ${urunBasliklari}
 
-Urunlerin fiyatlarini konsola yaz
-    # Liste elemanlarini $ ile veya @ ile tanimlayabilirim
-    @{urunListesi}    Get WebElements    ${urunFiyatlariLocator}
+    FOR  ${e}  IN  @{urunBaslikList}
+        ${eValue}    Get Text    ${e}
+        Log To Console    ${eValue}
+    END
     
-    # Liste elemanlarini dongulerde mutlaka @ ile cagirmaliyim
-    FOR  ${urun}  IN  @{urunListesi}
-        ${urunText}    Get Text    ${urun}
-        Log To Console    ${urunText}
-    END    
-    
-        
-    
-
-
-
